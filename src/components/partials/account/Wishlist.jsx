@@ -8,15 +8,15 @@ export default function Wishlist() {
     const ecomerce = useSelector(({ ecomerce }) => ecomerce);
     const { addItem, removeItem } = useEcomerce();
 
-    const wishlistItems = useSelector(({ ecomerce }) => ecomerce.wishlistItems);
+    const wishlistItems = useSelector(({ ecomerce }) => ecomerce?.wishlistItems);
     const { loading, getStrapiProducts, products } = useGetProducts();
 
     function getProducts() {
-        if (wishlistItems.length > 0) {
+        if (wishlistItems?.length > 0) {
             const query = {
                 filters: {
                     id: {
-                        $in: wishlistItems.map((item) => item.id),
+                        $in: wishlistItems?.map((item) => item?.id),
                     },
                 },
             };
@@ -30,17 +30,17 @@ export default function Wishlist() {
 
     function handleAddItemToCart(e, product) {
         e.preventDefault();
-        addItem({ id: product.id, quantity: 1 }, ecomerce.cartItems, 'cart');
+        addItem({ id: product?.id, quantity: 1 }, ecomerce?.cartItems, 'cart');
     }
 
     function handleRemoveWishlistItem(e, product) {
         e.preventDefault();
-        removeItem(product, ecomerce.wishlistItems, 'wishlist');
+        removeItem(product, ecomerce?.wishlistItems, 'wishlist');
     }
     // views
     const wishlistContent = useMemo(() => {
         if (loading) return <div>Loading...</div>;
-        if (products.length === 0) {
+        if (products?.length === 0) {
             return (
                 <div className="alert alert-danger" role="alert">
                     Wishlist list is empty!
@@ -60,8 +60,8 @@ export default function Wishlist() {
                         </tr>
                     </thead>
                     <tbody>
-                        {products.map((product) => (
-                            <tr key={product.id}>
+                        {products?.map((product) => (
+                            <tr key={product?.id}>
                                 <td>
                                     <a
                                         href="#"
@@ -74,8 +74,8 @@ export default function Wishlist() {
                                 <td>
                                     <CartProduct product={product} />
                                 </td>
-                                <td className="price">${product.price}</td>
-                                <td>{product.vendor}</td>
+                                <td className="price">${product?.price}</td>
+                                <td>{product?.vendor}</td>
                                 <td>
                                     <a
                                         className="ps-btn"
