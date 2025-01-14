@@ -8,15 +8,15 @@ import useGetProducts from '~/hooks/useGetProducts';
 export default function Compare() {
     const ecomerce = useSelector(({ ecomerce }) => ecomerce);
     const { addItem, removeItem } = useEcomerce();
-    const compareItems = useSelector(({ ecomerce }) => ecomerce?.compareItems);
+    const compareItems = useSelector(({ ecomerce }) => ecomerce.compareItems);
     const { getStrapiProducts, products } = useGetProducts();
 
     function getProducts() {
-        if (compareItems?.length > 0) {
+        if (compareItems.length > 0) {
             const query = {
                 filters: {
                     id: {
-                        $in: compareItems?.map((item) => item?.id),
+                        $in: compareItems.map((item) => item.id),
                     },
                 },
             };
@@ -30,22 +30,22 @@ export default function Compare() {
 
     function handleAddItemToCart(e, product) {
         e.preventDefault();
-        addItem({ id: product?.id, quantity: 1 }, ecomerce?.cartItems, 'cart');
+        addItem({ id: product.id, quantity: 1 }, ecomerce.cartItems, 'cart');
     }
 
     function handleRemoveCompareItem(e, product) {
         e.preventDefault();
-        removeItem(product, ecomerce?.compareItems, 'compare');
+        removeItem(product, ecomerce.compareItems, 'compare');
     }
 
     useEffect(() => {
         if (ecomerce) {
-            getProducts(ecomerce?.compareItems);
+            getProducts(ecomerce.compareItems);
         }
-    }, [ecomerce?.compareItems]);
+    }, [ecomerce.compareItems]);
 
     const content = useMemo(() => {
-        if (products?.length === 0) {
+        if (products.length === 0) {
             return (
                 <div className="alert alert-danger" role="alert">
                     Compare list is empty!
@@ -60,9 +60,9 @@ export default function Compare() {
                             <td className="heading" rowSpan="2">
                                 Product
                             </td>
-                            {products && products?.length > 0 ? (
-                                products?.map((product) => (
-                                    <td key={product?.id}>
+                            {products && products.length > 0 ? (
+                                products.map((product) => (
+                                    <td key={product.id}>
                                         <a
                                             href="#"
                                             onClick={(e) =>
@@ -80,23 +80,23 @@ export default function Compare() {
                             )}
                         </tr>
                         <tr>
-                            {products && products?.length > 0 ? (
-                                products?.map((product) => (
-                                    <td key={product?.id}>
+                            {products && products.length > 0 ? (
+                                products.map((product) => (
+                                    <td key={product.id}>
                                         <div className="ps-product--compare">
                                             <div className="ps-product__thumbnail">
                                                 <Link
                                                     href={'/product/[pid]'}
-                                                    as={`/product/${product?.id}`}>
+                                                    as={`/product/${product.id}`}>
                                                     {thumbnailImage}
                                                 </Link>
                                             </div>
                                             <div className="ps-product__content">
                                                 <Link
                                                     href={'/product/[pid]'}
-                                                    as={`/product/${product?.id}`}
+                                                    as={`/product/${product.id}`}
                                                     className="ps-product__title">
-                                                    {product?.title}
+                                                    {product.title}
                                                 </Link>
                                             </div>
                                         </div>
@@ -108,9 +108,9 @@ export default function Compare() {
                         </tr>
                         <tr>
                             <td className="heading">Rating</td>
-                            {products && products?.length > 0 ? (
-                                products?.map((product) => (
-                                    <td key={product?.id}>
+                            {products && products.length > 0 ? (
+                                products.map((product) => (
+                                    <td key={product.id}>
                                         <Rate disabled defaultValue={4} />
                                     </td>
                                 ))
@@ -120,24 +120,24 @@ export default function Compare() {
                         </tr>
                         <tr>
                             <td className="heading">Price</td>
-                            {products && products?.length > 0 ? (
-                                products?.map((product) => {
-                                    if (product?.sale === true) {
+                            {products && products.length > 0 ? (
+                                products.map((product) => {
+                                    if (product.sale === true) {
                                         return (
                                             <td key={product.id}>
                                                 <h4 className="price sale">
-                                                    ${product?.price}
+                                                    ${product.price}
                                                     <del>
-                                                        ${product?.salePrice}
+                                                        ${product.salePrice}
                                                     </del>
                                                 </h4>
                                             </td>
                                         );
                                     } else
                                         return (
-                                            <td key={product?.id}>
+                                            <td key={product.id}>
                                                 <h4 className="price">
-                                                    $ {product?.price}
+                                                    $ {product.price}
                                                 </h4>
                                             </td>
                                         );
@@ -148,11 +148,11 @@ export default function Compare() {
                         </tr>
                         <tr>
                             <td className="heading">Sold By</td>
-                            {products && products?.length > 0 ? (
-                                products?.map((product) => (
-                                    <td key={product?.id}>
+                            {products && products.length > 0 ? (
+                                products.map((product) => (
+                                    <td key={product.id}>
                                         <Link href="/vendor/store-list">
-                                            {product?.vendor}
+                                            {product.vendor}
                                         </Link>
                                     </td>
                                 ))
@@ -162,9 +162,9 @@ export default function Compare() {
                         </tr>
                         <tr>
                             <td className="heading"></td>
-                            {products && products?.length > 0 ? (
-                                products?.map((product) => (
-                                    <td key={product?.id}>
+                            {products && products.length > 0 ? (
+                                products.map((product) => (
+                                    <td key={product.id}>
                                         <button
                                             className="ps-btn"
                                             onClick={(e) =>

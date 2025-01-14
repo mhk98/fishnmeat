@@ -3,8 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useCookies } from 'react-cookie';
 import {
     changeCartItems,
-    changeCompareItems,
-    changeWishlistItems,
+ 
 } from '~/redux/features/ecommerceSlide';
 
 const PageLoader = () => {
@@ -16,12 +15,12 @@ const PageLoader = () => {
             if (cookies.cart) {
                 dispatch(changeCartItems(cookies.cart));
             }
-            if (cookies.wishlist) {
-                dispatch(changeWishlistItems(cookies.wishlist));
-            }
-            if (cookies.compare) {
-                dispatch(changeCompareItems(cookies.compare));
-            }
+            // if (cookies.wishlist) {
+            //     dispatch(changeWishlistItems(cookies.wishlist));
+            // }
+            // if (cookies.compare) {
+            //     dispatch(changeCompareItems(cookies.compare));
+            // }
         }
     }
 

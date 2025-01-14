@@ -57,27 +57,27 @@ const ProductActions = ({ product }) => {
       }
     };
 
-    function handleAddItemToWishlist(e) {
-        e.preventDefault();
-        addItem({ id: product.id }, ecomerce.wishlistItems, 'wishlist');
-        const modal = Modal.success({
-            centered: true,
-            title: 'Success!',
-            content: `This item has been added to your wishlist`,
-        });
-        modal.update;
-    }
+    // function handleAddItemToWishlist(e) {
+    //     e.preventDefault();
+    //     addItem({ id: product.id }, ecomerce.wishlistItems, 'wishlist');
+    //     const modal = Modal.success({
+    //         centered: true,
+    //         title: 'Success!',
+    //         content: `This item has been added to your wishlist`,
+    //     });
+    //     modal.update;
+    // }
 
-    function handleAddItemToCompare(e) {
-        e.preventDefault();
-        addItem({ id: product.id }, ecomerce.compareItems, 'compare');
-        const modal = Modal.success({
-            centered: true,
-            title: 'Success!',
-            content: `This product has been added to your compare listing!`,
-        });
-        modal.update;
-    }
+    // function handleAddItemToCompare(e) {
+    //     e.preventDefault();
+    //     addItem({ id: product.id }, ecomerce.compareItems, 'compare');
+    //     const modal = Modal.success({
+    //         centered: true,
+    //         title: 'Success!',
+    //         content: `This product has been added to your compare listing!`,
+    //     });
+    //     modal.update;
+    // }
 
     const handleShowQuickView = (e) => {
         e.preventDefault();
@@ -113,7 +113,7 @@ const ProductActions = ({ product }) => {
                     <i className="icon-eye" />
                 </a>
             </li>
-            <li>
+            {/* <li>
                 <a
                     href="#"
                     data-toggle="tooltip"
@@ -132,7 +132,7 @@ const ProductActions = ({ product }) => {
                     onClick={handleAddItemToCompare}>
                     <i className="icon-chart-bars" />
                 </a>
-            </li>
+            </li> */}
             <Modal
                 centered
                 footer={null}

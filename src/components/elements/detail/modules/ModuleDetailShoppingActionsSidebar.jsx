@@ -16,28 +16,28 @@ const ModuleDetailShoppingActionsSidebar = ({ ecomerce, product }) => {
         );
     }
 
-    function handleAddItemToCompare(e) {
-        e.preventDefault();
-        e.preventDefault();
-        addItem({ id: product.id }, ecomerce.compareItems, 'compare');
-        const modal = Modal.success({
-            centered: true,
-            title: 'Success!',
-            content: `This product has been added to compare listing!`,
-        });
-        modal.update;
-    }
+    // function handleAddItemToCompare(e) {
+    //     e.preventDefault();
+    //     e.preventDefault();
+    //     addItem({ id: product.id }, ecomerce.compareItems, 'compare');
+    //     const modal = Modal.success({
+    //         centered: true,
+    //         title: 'Success!',
+    //         content: `This product has been added to compare listing!`,
+    //     });
+    //     modal.update;
+    // }
 
-    function handleAddItemToWishlist(e) {
-        e.preventDefault();
-        addItem({ id: product.id }, ecomerce.wishlistItems, 'wishlist');
-        const modal = Modal.success({
-            centered: true,
-            title: 'Success!',
-            content: `This item has been added to your wishlist`,
-        });
-        modal.update;
-    }
+    // function handleAddItemToWishlist(e) {
+    //     e.preventDefault();
+    //     addItem({ id: product.id }, ecomerce.wishlistItems, 'wishlist');
+    //     const modal = Modal.success({
+    //         centered: true,
+    //         title: 'Success!',
+    //         content: `This item has been added to your wishlist`,
+    //     });
+    //     modal.update;
+    // }
 
     function handleIncreaseItemQty(e) {
         e.preventDefault();
@@ -86,7 +86,7 @@ const ModuleDetailShoppingActionsSidebar = ({ ecomerce, product }) => {
                 onClick={(e) => handleAddItemToCart(e)}>
                 Buy Now
             </a>
-            <div className="ps-product__actions">
+            {/* <div className="ps-product__actions">
                 <a href="#" onClick={(e) => handleAddItemToWishlist(e)}>
                     <i className="icon-heart mr-1" />
                     Add to wishlist
@@ -95,7 +95,7 @@ const ModuleDetailShoppingActionsSidebar = ({ ecomerce, product }) => {
                     <i className="icon-chart-bars mr-1" />
                     Compare
                 </a>
-            </div>
+            </div> */}
         </div>
     );
 };
