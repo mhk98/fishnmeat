@@ -29,11 +29,11 @@ export default function RecentViewedProducts() {
             active: true,
             icon: 'icon-store',
         },
-        {
-            text: 'Wishlist',
-            url: '/account/wishlist',
-            icon: 'icon-heart',
-        },
+        // {
+        //     text: 'Wishlist',
+        //     url: '/account/wishlist',
+        //     icon: 'icon-heart',
+        // },
     ];
 
     return (

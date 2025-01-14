@@ -30,11 +30,11 @@ export default function Invoices() {
             url: '/account/recent-viewed-product',
             icon: 'icon-papers',
         },
-        {
-            text: 'Wishlist',
-            url: '/account/wishlist',
-            icon: 'icon-papers',
-        },
+        // {
+        //     text: 'Wishlist',
+        //     url: '/account/wishlist',
+        //     icon: 'icon-papers',
+        // },
     ];
 
     return (

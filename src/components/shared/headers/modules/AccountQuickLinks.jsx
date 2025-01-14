@@ -26,10 +26,10 @@ const accountLinks = [
         text: 'Recent Viewed Product',
         url: '/account/recent-viewed-product',
     },
-    {
-        text: 'Wishlist',
-        url: '/account/wishlist',
-    },
+    // {
+    //     text: 'Wishlist',
+    //     url: '/account/wishlist',
+    // },
 ];
 
 

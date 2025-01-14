@@ -49,12 +49,10 @@
 
 import React from 'react';
 import Link from 'next/link';
-import MenuDropdown from '~/components/elements/menu/MenuDropdown';
 import MegaMenu from '~/components/elements/menu/MegaMenu';
 
 const DefaultMenuItem = ({ item }) => {
     // Log the item (for debugging purposes, remove in production)
-    console.log('DefaultMenuItem', item);
 
     // Render MegaMenu only if megaContent exists and has items
     if (item.megaContent && item.megaContent.length > 0) {
@@ -92,7 +90,6 @@ const DefaultMenu = ({ source, className }) => {
         );
     }
 
-    console.log("DefaultMenuItem", source)
     // Map through source array and render DefaultMenuItem
     const menuItems = source.map((item) => (
         <DefaultMenuItem item={item} key={item.text} /> // Use item.text as key

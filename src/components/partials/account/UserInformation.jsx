@@ -30,11 +30,11 @@ const UserInformation = () => {
             url: '/account/recent-viewed-product',
             icon: 'icon-store',
         },
-        {
-            text: 'Wishlist',
-            url: '/account/wishlist',
-            icon: 'icon-heart',
-        },
+        // {
+        //     text: 'Wishlist',
+        //     url: '/account/wishlist',
+        //     icon: 'icon-heart',
+        // },
     ];
 
     //Views

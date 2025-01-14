@@ -6,6 +6,7 @@ import ProductDetailQuickView from '~/components/elements/detail/ProductDetailQu
 import { useCreateCartMutation, useGetAllCartQuery } from '~/react-redux/features/cart/cart';
 import toast from 'react-hot-toast';
 
+
 const ProductActions = ({ product }) => {
     const ecomerce = useSelector(({ ecomerce }) => ecomerce);
     const [isQuickView, setIsQuickView] = useState(false);
@@ -90,7 +91,7 @@ const ProductActions = ({ product }) => {
 
     return (
         <ul className="ps-product__actions">
-          
+     
 
             <li>
                 <a
