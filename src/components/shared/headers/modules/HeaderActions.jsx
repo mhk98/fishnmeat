@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import Link from 'next/link';
 import MiniCart from '~/components/shared/headers/modules/MiniCart';
 import AccountQuickLinks from '~/components/shared/headers/modules/AccountQuickLinks';
 

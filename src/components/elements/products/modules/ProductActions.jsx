@@ -1,9 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Modal, notification } from 'antd';
+import { Modal } from 'antd';
 import { useSelector } from 'react-redux';
 import ProductDetailQuickView from '~/components/elements/detail/ProductDetailQuickView';
-import useEcomerce from '~/hooks/useEcomerce';
 import { useCreateCartMutation, useGetAllCartQuery } from '~/react-redux/features/cart/cart';
 import toast from 'react-hot-toast';
 

@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
-import { useRouter } from 'next/navigation';
-import { Modal } from 'antd';
-import useEcomerce from '~/hooks/useEcomerce';
 import { useCreateCartMutation, useGetAllCartQuery } from '~/react-redux/features/cart/cart';
 import toast from 'react-hot-toast';
 
 const ModuleDetailShoppingActions = ({product}) => {
     // const [quantity, setQuantity] = useState(1);
     // const Router = useRouter();
-    const { addItem } = useEcomerce();
+   
+    
 
 
     // function handleAddItemToCart(e) {
