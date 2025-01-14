@@ -10,6 +10,7 @@ import ShopSidebarBanner from '~/components/partials/shop/ShopSidebarBanner';
 import PageContainer from '~/components/layouts/PageContainer';
 import FooterDefault from '~/components/shared/footers/FooterDefault';
 import Newletters from '~/components/partials/commons/Newletters';
+import ShopItemsWrapper from '~/components/ShopItemsWrapper/ShopItemsWrapper';
 
 const ShopSidebarPage = () => {
     const breadCrumb = [
@@ -42,7 +43,8 @@ const ShopSidebarPage = () => {
                                     collectionSlug="shop-best-seller-items"
                                     title="Best Sale Items"
                                 />
-                                <ShopItems columns={4} pageSize={12} />
+                                                   <ShopItemsWrapper/>
+
                             </div>
                         </div>
                     </div>

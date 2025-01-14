@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Form, Input, Select, notification } from 'antd';
-import { useRouter } from 'next/router'; // Using useRouter instead of useSearchParams
+import { useRouter, useSearchParams } from 'next/navigation';
 import axios from 'axios';
 import { storgeUserInfo } from '~/components/services/auth.service';
 
 export default function Login() {
-    const Router = useRouter(); // Accessing useRouter from next/router
-    const { query } = Router; // Extracting the query params from router object
+    const Router = useRouter();
+    const searchParams = useSearchParams();
 
     const [phone, setPhone] = useState('');
     const [selectedCode, setSelectedCode] = useState('+880');
@@ -61,6 +61,7 @@ export default function Login() {
         { code: '+356', name: '+356 (MT)' },
         { code: '+372', name: '+372 (EE)' },
     ];
+    
 
     const validatePhoneNumber = (_, value) => {
         const regexMap = {
@@ -84,7 +85,7 @@ export default function Login() {
 
     const handleLogin = async (values) => {
         const { phoneNumber } = values;
-        const redirectTo = query.redirect || '/'; // Get redirect URL from query params
+        const redirectTo = searchParams.get('redirect') || '/'; // Get redirect URL from query params
 
         setLoading(true);
 
@@ -130,7 +131,11 @@ export default function Login() {
                             <div className="form-group">
                                 <Form.Item
                                     name="phoneNumber"
-                                    rules={[{ validator: validatePhoneNumber }]}
+                                    rules={[
+                                        {
+                                            validator: validatePhoneNumber,
+                                        },
+                                    ]}
                                 >
                                     <Input
                                         addonBefore={

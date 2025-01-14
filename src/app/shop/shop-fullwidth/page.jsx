@@ -8,6 +8,7 @@ import ShopItems from '~/components/partials/shop/ShopItems';
 import ProductGroupByCarousel from '~/components/partials/product/ProductGroupByCarousel';
 import PageContainer from '~/components/layouts/PageContainer';
 import Newletters from '~/components/partials/commons/Newletters';
+import ShopItemsWrapper from '~/components/ShopItemsWrapper/ShopItemsWrapper';
 
 const ShopFullwidthPage = () => {
     const breadCrumb = [
@@ -37,7 +38,7 @@ const ShopFullwidthPage = () => {
                         collectionSlug="hot-new-arrivals"
                         title="Recommended Items"
                     />
-                    <ShopItems columns={6} pageSize={18} />
+                   <ShopItemsWrapper />
                 </div>
             </div>
             <Newletters />
