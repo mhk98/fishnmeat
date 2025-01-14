@@ -1,7 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import { useParams, useRouter } from 'next/navigation';
-import useProductBrand from '~/hooks/useProductBrand';
 import { useGetAllBrandQuery } from '~/react-redux/features/brand/brand';
 
 const WidgetShopBrands = ({id}) => {
@@ -13,7 +11,6 @@ const WidgetShopBrands = ({id}) => {
     //     getBrands();
     // }, []);
 
-    console.log('paramsId', id)
 
     const { data, error, isLoading } = useGetAllBrandQuery({
         category_id: id,

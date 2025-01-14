@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useMemo, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { Pagination } from 'antd';
 import axios from 'axios';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -10,11 +10,7 @@ import WidgetShopBrands from '~/components/shared/widgets/WidgetShopBrands';
 import WidgetShopFilterByPriceRange from '~/components/shared/widgets/WidgetShopFilterByPriceRange';
 import PageContainer from '~/components/layouts/PageContainer';
 import Newletters from '~/components/partials/commons/Newletters';
-import ShopBanner from '~/components/partials/shop/ShopBanner';
-import ShopBrands from '~/components/partials/shop/ShopBrands';
-import ShopCategories from '~/components/partials/shop/ShopCategories';
 import Product from '~/components/elements/products/Product';
-import WideProduct from '~/components/elements/products/WideProduct';
 import ModuleShopSortBy from '~/components/partials/shop/modules/ModuleShopSortBy';
 import SkeletonProduct from '~/components/elements/skeletons/SkeletonProduct';
 import BreadCrumb from '~/components/elements/BreadCrumb';
@@ -34,7 +30,6 @@ export default function Page({ params: { id }, columns = 4, pageSize = 10 }) {
     const [currentPage, setCurrentPage] = useState(1);
  
 
-console.log('paramsId', id)
   // Fetch products using RTK Query
   const { data, error, isLoading } = useGetAllProductQuery({
     category_id: id,
