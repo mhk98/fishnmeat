@@ -7,8 +7,8 @@ import { useCreateCartMutation, useGetAllCartQuery } from '~/react-redux/feature
 import toast from 'react-hot-toast';
 
 const ModuleDetailShoppingActions = ({product}) => {
-    const [quantity, setQuantity] = useState(1);
-    const Router = useRouter();
+    // const [quantity, setQuantity] = useState(1);
+    // const Router = useRouter();
     const { addItem } = useEcomerce();
 
 

@@ -5,8 +5,7 @@ import MiniCart from '~/components/shared/headers/modules/MiniCart';
 import AccountQuickLinks from '~/components/shared/headers/modules/AccountQuickLinks';
 
 const HeaderActions = () => {
-    const compareItems = useSelector(({ ecomerce }) => ecomerce?.compareItems);
-    const wishlistItems = useSelector(({ ecomerce }) => ecomerce?.wishlistItems);
+   
     const isLoggedIn = useSelector(({ user }) => user?.isLoggedIn);
 
     const headerAuthContent = useMemo(() => {
